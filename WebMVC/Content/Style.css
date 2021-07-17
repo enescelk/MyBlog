@@ -1,0 +1,52 @@
+﻿.aboutImage {
+    position: absolute;
+}
+
+
+.aboutText {
+    position: absolute;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutText {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        font-size: inherit;
+    }
+}
+
+.socailMediaIcons {
+    color: black;
+    font-size: 25px;
+}
+
+.socailMediaIcons:hover {
+        color: #1877F2;
+}
+
+
+.img-hover-zoom{
+    transition: 0.5s;
+}
+
+
+.img-hover-zoom:hover{
+    transform: scale(1.2);
+}
+
+
+#yukari-cik {
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    left: 500em;
+    text-indent: -9999px;
+    z-index: 9999;
+    display: none;
+    background: url("/image/yukari.jpg");
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}

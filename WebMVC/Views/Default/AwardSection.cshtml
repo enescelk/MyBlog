@@ -1,0 +1,9 @@
+﻿@using WebMVC.Models.Entity;
+@model List<AwardImage>
+
+@foreach (var item in Model)
+{
+<section id="awards" class="img-fluid" style="position:relative; width: contain; height: 90vh; background-image: url(/image/glass.jpg); background-attachment:fixed; background-size:cover; background-repeat:no-repeat;">
+    @Html.Action("Awards")
+</section>
+}

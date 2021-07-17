@@ -1,0 +1,57 @@
+﻿@model WebMVC.Models.Entity.Contact
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Contact.css" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/2a7c3aa166.js" crossorigin="anonymous"></script>
+
+<div class="container">
+
+    <div class="col-lg-offset-6 col-lg-6" id="panel" style="margin: 2em auto;">
+        <br />
+        <h2>Bana Ulasin</h2>
+        <form class="form-group" method="post">
+
+            <div class="group">
+                <input type="text" required name="ContactFirstName">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Isminiz</label>
+            </div>
+            <div class="group">
+                <input type="text" required name="ContactLastName">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Soy Isminiz</label>
+            </div>
+
+            <div class="group">
+                <input type="text" required name="ContactSubject">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Konu</label>
+            </div>
+
+            <div class="group">
+                <input type="text" required name="ContactEmail">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Email</label>
+            </div>
+
+            <div class="group">
+                <input type="text" required name="ContactDescription">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Aciklama</label>
+            </div>
+            <div class="group">
+                <center> <button type="submit" class="btn btn-outline-warning" style="width:30%;">Send</button></center>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>

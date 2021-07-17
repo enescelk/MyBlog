@@ -1,0 +1,46 @@
+﻿@model WebMVC.Models.Entity.Education
+
+@{
+    ViewBag.Title = "EducationUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 5em auto" class="container">
+    <h2 style="text-align:center;">Egitim Guncelle</h2>
+    <hr />
+
+    <form class="form-group" method="post">
+
+        <br />
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Okul Ismi")
+        @Html.TextBoxFor(x => x.SchoolName, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Okul Basligi")
+        @Html.TextBoxFor(x => x.SchoolTitle, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Okul Zamani")
+        @Html.TextBoxFor(x => x.SchoolDate, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Okul Not Ortalamasi")
+        @Html.TextBoxFor(x => x.GPA, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Okul Aciklama")
+        @Html.TextAreaFor(x => x.SchoolDescription, new { @class = "form-control" })
+
+
+
+        <br />
+        <button type="submit" style="width: 100%; font-size:20px" class="btn btn-warning"><i class="fas fa-edit"></i> Guncelle</button>
+    </form>
+
+
+</div>
+

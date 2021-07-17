@@ -1,0 +1,65 @@
+﻿@using WebMVC.Models.Entity;
+@model List<Interest> 
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2 style="text-align:center">Hobilerim</h2>
+    <hr />
+    <br />
+    <button class="btn btn-outline-primary" style="width:10%" data-toggle="modal" data-target="#Modal1">EKLE</button>
+
+    <table class=" table table-bordered">
+        <thead>
+            <tr style="text-align:center">
+                <th>ID</th>
+                <th>Hobilerim Aciklama</th>
+                <th>Hobilerim Ikinci Aciklama <span class="accent-danger">(Zorunlu Degil !)</span> </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var interet in Model)
+        {
+            <tbody>
+                <tr style="text-align:center">
+                    <td>@interet.Id</td>
+                    <td>@interet.InteretsDescription</td>
+                    <td>@interet.InteretsTwoDescription</td>
+                    <td><a href="/Interests/InteretsDelete/@interet.Id" class="btn btn-danger"><i class="fas fa-trash"></i> Sil</a></td>
+                    <td><a href="/Interests/InteretsUpdate/@interet.Id" class="btn btn-warning"><i class="fas fa-edit"></i> Duzenle</a></td>
+                </tr>
+            </tbody>
+        }
+
+    </table>
+
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" style="padding-left: 5em "> Hobilerim Ekle </h2>
+                </div>
+                <form method="post" action="/Interests/InteretsAdd/">
+                    <div class="modal-body">
+
+                        <label> Hobilerim Aciklama</label>
+                        <input type="text" name="InteretsDescription" class="form-control" />
+                        <br />
+
+                        <label> Hobilerim Aciklama <span style="color:red">(Zorunlu Degil)</span> </label>
+                        <input type="text" name="InteretsTwoDescription" class="form-control" />
+                        <br />
+
+                        <button class="btn btn-info"> Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+

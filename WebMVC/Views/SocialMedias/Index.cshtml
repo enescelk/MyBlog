@@ -1,0 +1,62 @@
+﻿@using WebMVC.Models.Entity
+@model List<SocialMedia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2 style="text-align:center">Sosyal Medya</h2>
+    <hr />
+    <br />
+    <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1"><i class="fas fa-plus"></i> EKLE</button>
+    <table class=" table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Platform Ismi</th>
+                <th>Platform Linki</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var media in Model)
+        {
+            <tbody>
+                <tr style="text-align:center">
+                    <td>@media.Id</td>
+                    <td>@media.IconName</td>
+                    <td>@media.MediaLink</td>
+                    <td><a href="/SocialMedias/MediaDelete/@media.Id" class="btn btn-danger"><i class="fas fa-trash"></i> Sil</a></td>
+                    <td><a href="/SocialMedias/MediaUpdate/@media.Id" class="btn btn-warning"><i class="fas fa-edit"></i> Duzenle</a></td>
+                </tr>
+            </tbody>
+        }
+
+    </table>
+
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" style="padding-left: 2.5em "> Kullanicilara Rol Atama </h2>
+                </div>
+                <form method="post" action="/SocialMedias/MediaAdd/">
+                    <div class="modal-body">
+                        <label> Platform Ismi</label>
+                        <input type="text" name="IconName" class="form-control" />
+                        <br />
+
+                        <label> Platform Linki</label>
+                        <input type="text" name="MediaLink" class="form-control" />
+                        <br />
+
+                        <button class="btn btn-info"> Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,34 @@
+﻿@model WebMVC.Models.Entity.Manager
+@{
+    ViewBag.Title = "ManagerAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div style="margin: 5em auto" class="container">
+    <h2 style="text-align:center;">Yonetici Ekle</h2>
+    <hr />
+
+    <form class="form-group" method="post">
+
+        <br />
+        @Html.Label("Yonetici Name")
+        @Html.TextBoxFor(m => m.AdminName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.AdminName, "")
+
+        <br />
+        @Html.Label("Yonetici Sifre")
+        @Html.TextBoxFor(m => m.AdminPassword, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.AdminPassword, "")
+
+        <br />
+        <button type="submit" style="width: 100%; font-size:20px" class="btn btn-info"><i class="fas fa-plus"></i> Ekle</button>
+    </form>
+
+
+</div>
+
+
+
+

@@ -1,0 +1,30 @@
+﻿@model WebMVC.Models.Entity.SocialMedia
+@{
+    ViewBag.Title = "MediaUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 5em auto" class="container">
+    <h2 style="text-align:center">Sosyal Medya Guncelle</h2>
+    <hr />
+
+    <form class="form-group" method="post">
+
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control disabled" })
+
+        <br />
+        @Html.Label("Platform Ismi")
+        @Html.TextBoxFor(x => x.IconName, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Platform Linki")
+        @Html.TextBoxFor(x => x.MediaLink, new { @class = "form-control" })
+
+        <br />
+        <button type="submit" style="width: 100%; font-size:20px" class="btn btn-info"><i class="fas fa-wrench"></i> Guncelle</button>
+    </form>
+
+
+</div>
+

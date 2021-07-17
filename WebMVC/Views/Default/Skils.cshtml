@@ -1,0 +1,12 @@
+﻿@using WebMVC.Models.Entity;
+@model List<Skil>
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div style="display:inline-block; text-align:center;">
+            <a href="#" style="text-decoration:none; color:black;"><i class="fab fa-@item.SkilName"></i> %@item.SkilRate</a>
+        </div>
+    }
+
+</div>

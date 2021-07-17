@@ -1,0 +1,50 @@
+﻿@model WebMVC.Models.Entity.About
+
+@{
+    ViewBag.Title = "AboutAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="text-align:center;">Kisi Ekle</h2>
+<hr />
+<div class="card">
+    <div class="card-body">
+        <form class="form-group" method="post">
+
+            <br />
+            @Html.Label("Isim")
+            @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.FirstName, "")
+
+            <br />
+            @Html.Label("Soy Isim")
+            @Html.TextBoxFor(a => a.LastName, new { @class = "form-control" })
+
+            <br />
+            @Html.Label("E-mail")
+            @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.Email, "")
+
+            <br />
+            @Html.Label("Addres")
+            @Html.TextBoxFor(a => a.Addres, new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.Addres, "")
+
+            <br />
+            @Html.Label("Telefon Numarasi")
+            @Html.TextBoxFor(a => a.PhoneNumber, new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.PhoneNumber, "")
+
+            <br />
+            @Html.Label("Aciklama")
+            @Html.TextBoxFor(a => a.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.Description, "")
+
+            <br />
+            <button type="submit" style="width: 100%; font-size:20px" class="btn btn-outline-info"><i class="fas fa-plus"></i> Ekle</button>
+        </form>
+    </div>
+</div>
+
+</div>
+

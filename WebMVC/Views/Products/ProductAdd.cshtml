@@ -1,0 +1,39 @@
+﻿@model WebMVC.Models.Entity.Product
+@{
+    ViewBag.Title = "ProductAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 5em auto" class="container">
+    <h2 style="text-align:center;">U R U N E K L E</h2>
+    <hr />
+
+    <form class="form-group" method="post">
+
+        <br />
+        @Html.Label("Urun Ismi")
+        @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.ProductName, "")
+
+        <br />
+        @Html.Label("Kategori ID")
+        @Html.TextBoxFor(p => p.CategoryID, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Fiyat")
+        @Html.TextBoxFor(p => p.UnitPrice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.UnitPrice, "")
+
+        <br />
+        @Html.Label("Stok Adedi")
+        @Html.TextBoxFor(p => p.UnitsInStock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.UnitsInStock, "")
+
+        <br />
+        <button type="submit" style="width: 100%; font-size:20px" class="btn btn-info"><i class="fas fa-plus"></i> Ekle</button>
+    </form>
+
+
+</div>
+
+

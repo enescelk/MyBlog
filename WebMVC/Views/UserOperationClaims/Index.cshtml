@@ -1,0 +1,61 @@
+﻿@using WebMVC.Models.Entity;
+@model List<UserOperationClaim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2 style="text-align:center">Kullanicilara Rol Ata</h2>
+    <hr />
+    <br />
+    <table class=" table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Rol ID</th>
+                <th>Kullanici ID</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var userOperation in Model)
+        {
+            <tbody>
+                <tr style="text-align:center">
+                    <td>@userOperation.Id</td>
+                    <td>@userOperation.OperationClaimId</td>
+                    <td>@userOperation.UserId</td>
+                    <td><a href="/UserOperationClaims/UserOperationClaimDelete/@userOperation.Id" class="btn btn-danger"><i class="fas fa-trash"></i> Sil</a></td>
+                    <td><a href="/UserOperationClaims/UserOperationClaimUpdate/@userOperation.Id" class="btn btn-warning"><i class="fas fa-edit"></i> Duzenle</a></td>
+                </tr>
+            </tbody>
+        }
+
+    </table>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">EKLE</button>
+
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" style="padding-left: 2.5em "> Kullanicilara Rol Atama </h2>
+                </div>
+                <form method="post" action="/UserOperationClaims/UserOperationClaimAdd/">
+                    <div class="modal-body">
+                        <label> Kullanici ID</label>
+                        <input type="number" name="userId" class="form-control" />
+                        <br />
+
+                        <label> Rol ID</label>
+                        <input type="number" name="OperationClaimId" class="form-control" />
+                        <br />
+
+                        <button class="btn btn-info"> Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,42 @@
+﻿@using WebMVC.Models.Entity;
+@model List<Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <h2 style="text-align:center">Kategoriler<h2>
+    <hr />
+    <br />
+    <a href="/Categories/CategoryAdd" class="btn btn-primary" style="width:20vh"><i class="fas fa-plus"></i> Ekle</a>
+    <br />
+        <br />
+    <table style="font-size:20px" class=" table table-bordered">
+        <thead style="text-align:center">
+            <tr>
+                <th>Category ID</th>
+                <th>Kategori Ismi</th>
+                <th>Aciklama</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var category in Model)
+        {
+            <tbody style="text-align:center">
+                <tr>
+                    <td scope="row">@category.CategoryID</td>
+                    <td>@category.CategoryName</td>
+                    <td>@category.Description</td>
+                    <td><a href="/Categories/CategoryDelete/@category.CategoryID" class="btn btn-danger"><i class="fas fa-trash"></i> Sil</a></td>
+                    <td><a href="/Categories/CategoryUpdate/@category.CategoryID" class="btn btn-warning"><i class="fas fa-edit"></i> Duzenle</a></td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>

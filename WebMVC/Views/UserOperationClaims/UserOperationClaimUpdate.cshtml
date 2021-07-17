@@ -1,0 +1,31 @@
+﻿@model WebMVC.Models.Entity.UserOperationClaim
+
+@{
+    ViewBag.Title = "UserOperationClaimUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 5em auto" class="container">
+    <h2 style="text-align:center">Kullanicilara Rol Ata</h2>
+    <hr />
+
+    <form class="form-group" method="post">
+
+        @Html.Label("ID")
+        @Html.TextBoxFor(uoc => uoc.Id, new { @class = "form-control disabled" })
+
+        <br />
+        @Html.Label("Rol ID")
+        @Html.TextBoxFor(uoc => uoc.OperationClaimId, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Kullanici ID")
+        @Html.TextBoxFor(uoc => uoc.UserId, new { @class = "form-control" })
+
+        <br />
+        <button type="submit" style="width: 100%; font-size:20px" class="btn btn-info"><i class="fas fa-wrench"></i> Guncelle</button>
+    </form>
+
+
+</div>
+

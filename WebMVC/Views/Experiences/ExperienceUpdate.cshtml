@@ -1,0 +1,55 @@
+﻿@model WebMVC.Models.Entity.Experience
+
+@{
+    ViewBag.Title = "ExperienceUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 5em auto" class="container">
+    <h2 style="text-align:center;">Deneyim Ekle</h2>
+    <hr />
+
+    <form class="form-group" method="post">
+
+        <br />
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id, "")
+
+        <br />
+        @Html.Label("Deneyim Ismi")
+        @Html.TextBoxFor(x => x.ExperienceName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ExperienceName, "")
+
+        <br />
+        @Html.Label("Deneyim Basligi")
+        @Html.TextBoxFor(x => x.ExperienceTwoTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ExperienceTwoTitle, "")
+        <br />
+        @Html.Label("Deneyim Tarihi")
+        @Html.TextBoxFor(x => x.ExperienceDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ExperienceDate, "")
+
+        <br />
+        @Html.Label("Deneyim Aciklamasi")
+        @Html.TextAreaFor(x => x.ExperienceDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ExperienceDescription, "")
+
+        <br />
+        @Html.Label("Deneyim Github Linki")
+        @Html.TextBoxFor(x => x.ExperienceLinks, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ExperienceLinks, "")
+
+        <br />
+        @Html.Label("Resim")
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control", type = "file" })
+        @Html.ValidationMessageFor(x => x.Image, "")
+
+
+        <br />
+        <button type="submit" style="width: 100%; font-size:20px" class="btn btn-warning"><i class="fas fa-edit"></i> Guncelle</button>
+    </form>
+
+
+</div>
+

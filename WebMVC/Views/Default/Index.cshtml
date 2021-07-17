@@ -1,0 +1,96 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/2a7c3aa166.js" crossorigin="anonymous"></script>
+    @Styles.Render("/Content/Style.css")
+    <title>Blog</title>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#about">Hakkimizda</a>
+                    <a class="nav-link" href="#experience">Deneyimlerim</a>
+                    <a class="nav-link" href="#awards">Odullerim</a>
+                    <a class="nav-link" href="#education">Egitim Hayatim</a>
+                    <a class="nav-link" href="#">Hobilerim</a>
+                    <a class="nav-link" href="#">Yeteneklerim</a>
+                    <a class="nav-link" href="/Default/ContactAdd/">Bana Ulasin</a>
+                    <div style="margin-left:15em;">
+                        @Html.Action("SocialMedia")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- NAVBAR -->
+    <!-- About -->
+         @Html.Action("AboutSection")
+    <!-- About -->
+    <!-- Award -->
+        @Html.Action("AwardSection")
+    <!-- Award -->
+    <!-- Education -->
+        @Html.Action("EducationSection")
+    <!-- Education -->
+
+    <!-- Interests -->
+    <section id="interests" class="img-fluid" style="position:relative; width: contain; height: 90vh; background-image: url(/image/train.jpg); background-attachment:fixed; background-size:cover; background-repeat:no-repeat;">
+        @Html.Action("Interests")
+    </section>
+    <!-- Interests -->
+    <!-- Experience -->
+    <section id="experince" style="background-color: #F7F7F7;">
+        <h3 style="text-align:center; padding-top: 2em; padding-bottom: 2em;"> Deneyimlerim</h3>
+        <hr />
+        @Html.Action("Experience")
+    </section>
+    <!-- Experience -->
+
+
+
+
+
+    <a href="#top" id="yukari-cik" title="Yukarı Çık"><img src="~/image/yukari.jpg" alt="Alternate Text" /></a>
+
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() < 850) {
+                    $('#yukari-cik').fadeOut();
+                } else {
+                    $('#yukari-cik').fadeIn();
+                }
+            });
+            $('#yukari-cik').on('click', function () {
+                $('html, body').animate({ scrollTop: 0 }, 'fast');
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

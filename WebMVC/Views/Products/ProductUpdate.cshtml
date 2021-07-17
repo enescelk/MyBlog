@@ -1,0 +1,39 @@
+﻿@model WebMVC.Models.Entity.Product
+
+@{
+    ViewBag.Title = "ProductUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 5em auto" class="container">
+    <h2 style="text-align:center">U R U N  G U N C E L L E</h2>
+    <hr />
+
+    <form class="form-group" method="post">
+
+        @Html.Label("ID")
+        @Html.TextBoxFor(p => p.ProductID, new { @class = "form-control disabled" })
+
+        <br />
+        @Html.Label("Urun Ismi")
+        @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Kategori ID")
+        @Html.TextBoxFor(p => p.CategoryID, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Urun Fiyati")
+        @Html.TextBoxFor(p => p.UnitPrice, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Urun Stok Adedi")
+        @Html.TextBoxFor(p => p.UnitsInStock, new { @class = "form-control" })
+
+        <br />
+        <button type="submit" style="width: 100%; font-size:20px" class="btn btn-info"><i class="fas fa-wrench"></i> Guncelle</button>
+    </form>
+
+
+</div>
+

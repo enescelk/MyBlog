@@ -1,0 +1,48 @@
+﻿@using WebMVC.Models.Entity;
+@model List<Experience>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2 style="text-align:center">Deneyimlerim</h2>
+    <hr />
+    <br />
+    <a href="/Experiences/ExperienceAdd/" style="width: 20vh" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Ekle</a>
+
+    <table class=" table table-bordered" style="font-size: 12px">
+        <thead>
+            <tr style="text-align:center; font-size:13px">
+                <th>ID</th>
+                <th>Deneyim Ismi</th>
+                <th>Deneyim Basligi</th>
+                <th>Deneyim Zamani</th>
+                <th>Deneyim Aciklamasi</th>
+                <th>Github Linki</th>
+                <th>Resim</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var experience in Model)
+        {
+            <tbody >
+                <tr style="text-align:center">
+                    <td>@experience.Id</td>
+                    <td>@experience.ExperienceName</td>
+                    <td>@experience.ExperienceTwoTitle</td>
+                    <td>@experience.ExperienceDate</td>
+                    <td>@experience.ExperienceDescription</td>
+                    <td>@experience.ExperienceLinks</td>
+                    <td><img src="~/image/@experience.Image" width="150" height="75" alt="Alternate Text" /></td>
+                    <td><a href="/Experiences/ExperienceDelete/@experience.Id" class="btn btn-danger"><i class="fas fa-trash"></i> Sil</a></td>
+                    <td><a href="/Experiences/ExperienceUpdate/@experience.Id" class="btn btn-warning"><i class="fas fa-edit"></i> Duzenle</a></td>
+                </tr>
+            </tbody>
+        }
+
+    </table>
+
+</div>

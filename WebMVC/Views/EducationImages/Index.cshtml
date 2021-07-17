@@ -1,0 +1,58 @@
+﻿@using WebMVC.Models.Entity;
+@model List<EducationImage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2> Egitim Sayfasi Resimleri</h2>
+    <hr />
+    <br />
+    <button class="btn btn-primary" style="width: 10%;" data-toggle="modal" data-target="#Modal1">Resim Ekle</button>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Resim</th>
+                <th>Durum</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr style="text-align:center">
+                    <td>@item.Id</td>
+                    <td><img src="~/image/@item.ImageName" width="150" height="75" alt="Alternate Text" /></td>
+                    <td>
+                        <a href="/EducationImages/EducationImagePassive/@item.Id" class="btn btn-primary btn-warning" style="width:20em"><b><i class="fas fa-lock"></i>  Pasif Yap</b></a>
+                        <a href="/EducationImages/EducationImageActive/@item.Id" class="btn btn-primary btn-info" style="width:20em"><b><i class="fas fa-lock-open"></i>  Aktif Et</b></a>
+                    </td>
+                </tr>
+            </tbody>
+        }
+    </table>
+
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" style="padding-left: 5em "> Resim Ekle </h2>
+                </div>
+                <form method="post" action="/EducationImages/EducationImageAdd/">
+                    <div class="modal-body">
+
+                        <label> Resim Ekle</label>
+                        <input type="file" name="ImageName" class="custom-file-control" />
+                        <br />
+
+                        <button class="btn btn-info"> Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

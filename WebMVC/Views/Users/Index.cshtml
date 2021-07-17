@@ -1,0 +1,39 @@
+﻿@using WebMVC.Models.Entity;
+@model List<User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div style="margin:10vh auto" class="container">
+
+    @foreach (var user in Model)
+    {
+        <div class="card card-primary card-outline">
+
+            <div class="card-body box-profile">
+                <h3 class="profile-username text-center">@user.FirstName - @user.LastName</h3>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                    <li class="list-group-item">
+                        <b>@user.Email</b>
+                    </li>
+                    <li class="list-group-item">
+                        <b>@user.Status</b>
+                    </li>
+                </ul>
+
+                <div style="text-align:center" class="container">
+                    <a href="/Users/UserDelete/@user.Id" class="btn btn-primary btn-danger" style="width:20em"><b><i class="fas fa-trash"></i>  Sil</b></a>
+                    <a href="/Users/UserPassive/@user.Id" class="btn btn-primary btn-warning" style="width:20em"><b><i class="fas fa-lock"></i>  Pasif Yap</b></a>
+                    <a href="/Users/UserActive/@user.Id" class="btn btn-primary btn-info" style="width:20em"><b><i class="fas fa-lock-open"></i>  Aktif Et</b></a>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>
+

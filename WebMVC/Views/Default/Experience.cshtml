@@ -1,0 +1,26 @@
+﻿@using WebMVC.Models.Entity;
+@model List<Experience>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <div>
+                        <img src="~/image/@item.Image" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@item.ExperienceName</h5>
+                        <span class="card-deck">@item.ExperienceTwoTitle</span>
+                        <span class="card-deck" style="float:right">@item.ExperienceDate</span>
+                        <hr />
+                        <p class="card-text">@item.ExperienceDescription</p>
+                        <a href="@item.ExperienceLinks" class="btn btn-outline-primary"><i class="fab fa-github"></i> Github</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

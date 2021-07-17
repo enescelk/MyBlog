@@ -1,0 +1,27 @@
+﻿@model WebMVC.Models.Entity.Category
+
+@{
+    ViewBag.Title = "CategoryAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 5em auto" class="container">
+    <h2>Kategori Ekle</h2>
+
+    <form class="form-group" method="post">
+
+        <br />
+        @Html.Label("Category Name")
+        @Html.TextBoxFor(c => c.CategoryName, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Description")
+        @Html.TextBoxFor(c => c.Description, new { @class = "form-control" })
+
+        <br />
+        <button type="submit" style="width: 100%; font-size:20px" class="btn btn-primary"><i class="fas fa-plus"></i> Ekle</button>
+    </form>
+
+
+</div>
+

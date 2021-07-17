@@ -1,0 +1,37 @@
+﻿@using WebMVC.Models.Entity;
+@model List<OperationClaim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2 style="text-align:center">Rol Ata</h2>
+    <hr />
+    <br />
+    <table class=" table table-bordered">
+        <thead>
+            <tr>
+                <th>Rol ID</th>
+                <th>Rol Adi</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var operation in Model)
+        {
+            <tbody>
+                <tr style="text-align:center">
+                    <td>@operation.Id</td>
+                    <td>@operation.Name</td>
+                    <td><a href="/OperationClaims/OperationClaimDelete/@operation.Id" class="btn btn-danger"><i class="fas fa-trash"></i> Sil</a></td>
+                    <td><a href="/OperationClaims/OperationClaimUpdate/@operation.Id" class="btn btn-warning"><i class="fas fa-edit"></i> Duzenle</a></td>
+                </tr>
+            </tbody>
+        }
+
+    </table>
+    <a href="/OperationClaims/OperationClaimAdd/" style="width: 20vh" class="btn btn-primary"><i class="fas fa-plus"></i> Ekle</a>
+</div>
+

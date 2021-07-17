@@ -1,0 +1,62 @@
+﻿@using WebMVC.Models.Entity
+@model List<Award>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <h2 style="text-align:center">Odul</h2>
+    <hr />
+    <br />
+    <button class="btn btn-outline-primary" style="width:10%" data-toggle="modal" data-target="#Modal1">EKLE</button>
+
+    <table class="mt-2 table table-bordered">
+        <thead>
+            <tr>
+                <th>Odul</th>
+                <th>Resim</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var award in Model)
+        {
+            <tbody>
+                <tr style="text-align:center">
+                    <td>@award.award1</td>
+                    <td><a href="/Awards/AwardDelete/@award.Id" class="btn btn-danger"><i class="fas fa-trash"></i> Sil</a></td>
+                    <td><a href="/Awards/AwardUpdate/@award.Id" class="btn btn-warning"><i class="fas fa-edit"></i> Duzenle</a></td>
+                </tr>
+            </tbody>
+        }
+
+    </table>
+
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" style="padding-left: 5em "> Odul Ekle </h2>
+                </div>
+                <form method="post" action="/Awards/AwardAdd/">
+                    <div class="modal-body">
+
+                        <label> Odul Name </label>
+                        <input type="text" name="award1" class="form-control" />
+                        <br />
+
+                        <button class="btn btn-info"> Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

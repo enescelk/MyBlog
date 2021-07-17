@@ -1,0 +1,45 @@
+﻿@model WebMVC.Models.Entity.About 
+
+@{
+    ViewBag.Title = "AboutUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="text-align:center;">Kisi Guncelle</h2>
+<hr />
+<div class="card">
+    <div class="card-body">
+        <form class="form-group" method="post">
+
+            <br />
+            @Html.Label("Isim")
+            @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })
+
+            <br />
+            @Html.Label("Soy Isim")
+            @Html.TextBoxFor(a => a.LastName, new { @class = "form-control" })
+
+            <br />
+            @Html.Label("E-mail")
+            @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+
+            <br />
+            @Html.Label("Addres")
+            @Html.TextBoxFor(a => a.Addres, new { @class = "form-control" })
+
+            <br />
+            @Html.Label("Telefon Numarasi")
+            @Html.TextBoxFor(a => a.PhoneNumber, new { @class = "form-control" })
+
+            <br />
+            @Html.Label("Aciklama")
+            @Html.TextBoxFor(a => a.Description, new { @class = "form-control" })
+
+            <br />
+            <button type="submit" style="width: 100%; font-size:20px" class="btn btn-outline-info"><i class="fas fa-plus"></i> Guncelle</button>
+        </form>
+    </div>
+</div>
+
+</div>
+

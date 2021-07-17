@@ -1,0 +1,13 @@
+﻿@using WebMVC.Models.Entity;
+@model List<SocialMedia>
+
+
+<div>
+    @foreach (var item in Model)
+    {
+    <div style="display:inline-block; text-align:center;">
+        <a href="https://www.@item.MediaLink/" class="socailMediaIcons"><i class="fab fa-@item.IconName"></i></a>
+    </div>
+    }
+
+</div>

@@ -1,0 +1,11 @@
+﻿@using WebMVC.Models.Entity;
+@model List<AboutImage>
+
+@foreach (var item in Model)
+{
+<section id="about" class="img-fluid" style="background-image: url(/image/@item.ImageName); background-attachment:fixed; background-size:cover;">
+    @Html.Action("About")
+</section>
+}
+
+

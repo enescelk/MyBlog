@@ -1,0 +1,25 @@
+﻿@model WebMVC.Models.Entity.OperationClaim
+
+@{
+    ViewBag.Title = "OperationClaimAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 5em auto" class="container">
+    <h2 style="text-align:center;">R O L E K L E</h2>
+    <hr />
+
+    <form class="form-group" method="post">
+
+        <br />
+        @Html.Label("Operation Clai Add")
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Name, "")
+
+        <br />
+        <button type="submit" style="width: 100%; font-size:20px" class="btn btn-primary"><i class="fas fa-plus"></i> Ekle</button>
+    </form>
+
+
+</div>
+
